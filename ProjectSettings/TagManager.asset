@@ -7,6 +7,9 @@ TagManager:
   - Invader
   - Player_bullet
   - Invader_bullet
+  - Background
+  - Left_wall
+  - Right_wall
   layers:
   - Default
   - TransparentFX
