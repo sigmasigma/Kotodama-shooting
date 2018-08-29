@@ -5,6 +5,7 @@ using UnityEngine;
 public class Invader : MonoBehaviour {
 
 	public float downSpeed = 1;
+	public GameObject invaderBullet;
 	// Use this for initialization
   IEnumerator Start ()
   {
@@ -16,6 +17,9 @@ public class Invader : MonoBehaviour {
 	  	GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
 	  	// 1秒待つ
       yield return new WaitForSeconds (1f);
+			if (Random.Range(0f,100f) < 99f){
+				Instantiate(invaderBullet,transform.position,transform.rotation);
+			}
     }
   }
 	

@@ -27,4 +27,14 @@ public class Player : MonoBehaviour {
 			Instantiate (bullet, transform.position, transform.rotation);
 		}
 	}
+	void OnTriggerEnter2D (Collider2D c){
+		if(c.gameObject.CompareTag("Invader_bullet") || c.gameObject.CompareTag("Invader")){
+			
+			death();
+		}
+	}
+	void death(){
+
+		Destroy(gameObject);
+	}
 }
