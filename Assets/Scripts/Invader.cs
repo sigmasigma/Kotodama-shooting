@@ -9,6 +9,7 @@ public class Invader : MonoBehaviour {
 	public int xSpeed = 200;
 	public float downSpeed = 100;
 	public GameObject invaderBullet;
+    public GameObject player;
 	// Use this for initialization
   IEnumerator Start ()
   {
@@ -26,15 +27,16 @@ public class Invader : MonoBehaviour {
       for (int i = 0; i<5; i++){
 				yield return new WaitForSeconds (0.2f);
 				if (Random.Range(0f,100f) > 92f){
-					Instantiate(invaderBullet,transform.position,transform.rotation);
-				}
+					GameObject invaderBulletInstance = Instantiate(invaderBullet,transform.position,transform.rotation);
+                    invaderBulletInstance.transform.parent = transform;
+                }
 			}
     }
   }
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
 	void OnTriggerEnter2D (Collider2D c){
@@ -43,12 +45,4 @@ public class Invader : MonoBehaviour {
 				Destroy(gameObject);
 		}
 	}
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Background"))
-        {
-            Destroy(gameObject);
-        }
-    }
 }

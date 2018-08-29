@@ -8,13 +8,21 @@ public class Player : MonoBehaviour {
 	public GameObject bullet;
   	// 移動スピード
   	public float speed = 5;
-    public GameObject slider;
-    public GameObject gameOverText;
+    public GameObject canvas;
+    public GameObject initGame;
+    GameObject slider;
+    GameObject gameOverText;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    // public GameObject slider;
+    // public GameObject gameOverText;
+
+    // Use this for initialization
+    void Start () {
+        GameObject canvasInstance = Instantiate(canvas, new Vector3(0,0,0), transform.rotation);
+        canvasInstance.transform.parent = transform.root;
+        slider = canvasInstance.GetComponentInChildren<UnityEngine.UI.Slider>().gameObject;
+        gameOverText = canvasInstance.transform.Find("GameOver").gameObject;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -57,8 +65,9 @@ public class Player : MonoBehaviour {
 		}
 	}
     
-    void death(){
-        gameOverText.GetComponent<UnityEngine.UI.Text>().text = "GameOver";
+    public void death(){
+        gameOverText.GetComponent<UnityEngine.UI.Text>().text = "GameOver\nPress Enter";
+        transform.root.gameObject.GetComponent<GameManager>().restart();
 		Destroy(gameObject);
 	}
 }

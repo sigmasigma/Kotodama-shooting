@@ -101,8 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 1159726518885894, guid: fb3949aff69ca41d9a3f83f06775ceab, type: 2}
   speed: 5
-  slider: {fileID: 0}
-  gameOverText: {fileID: 0}
+  canvas: {fileID: 1384370770193812, guid: b18db6965fd44bb4985bc473ef79f061, type: 2}
 --- !u!212 &212863649610248282
 SpriteRenderer:
   m_ObjectHideFlags: 1

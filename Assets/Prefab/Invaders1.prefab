@@ -153,7 +153,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4202902307044432}
   m_Layer: 0
-  m_Name: Invaders
+  m_Name: Invaders1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -679,6 +679,7 @@ MonoBehaviour:
   downSpeed: 1
   invaderBullet: {fileID: 1491109863916402, guid: 3d397ffc320104a1f8842e6917c4cef8,
     type: 2}
+  player: {fileID: 0}
 --- !u!114 &114033593927632250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -695,6 +696,7 @@ MonoBehaviour:
   downSpeed: 1
   invaderBullet: {fileID: 1491109863916402, guid: 3d397ffc320104a1f8842e6917c4cef8,
     type: 2}
+  player: {fileID: 0}
 --- !u!114 &114047208354081962
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -711,6 +713,7 @@ MonoBehaviour:
   downSpeed: 1
   invaderBullet: {fileID: 1491109863916402, guid: 3d397ffc320104a1f8842e6917c4cef8,
     type: 2}
+  player: {fileID: 0}
 --- !u!114 &114127421664543202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -727,6 +730,7 @@ MonoBehaviour:
   downSpeed: 1
   invaderBullet: {fileID: 1491109863916402, guid: 3d397ffc320104a1f8842e6917c4cef8,
     type: 2}
+  player: {fileID: 0}
 --- !u!114 &114241811888181126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -743,6 +747,7 @@ MonoBehaviour:
   downSpeed: 1
   invaderBullet: {fileID: 1491109863916402, guid: 3d397ffc320104a1f8842e6917c4cef8,
     type: 2}
+  player: {fileID: 0}
 --- !u!114 &114578907010994632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -759,6 +764,7 @@ MonoBehaviour:
   downSpeed: 1
   invaderBullet: {fileID: 1491109863916402, guid: 3d397ffc320104a1f8842e6917c4cef8,
     type: 2}
+  player: {fileID: 0}
 --- !u!114 &114834655400887966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -775,6 +781,7 @@ MonoBehaviour:
   downSpeed: 1
   invaderBullet: {fileID: 1491109863916402, guid: 3d397ffc320104a1f8842e6917c4cef8,
     type: 2}
+  player: {fileID: 0}
 --- !u!114 &114953154391275584
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -791,6 +798,7 @@ MonoBehaviour:
   downSpeed: 1
   invaderBullet: {fileID: 1491109863916402, guid: 3d397ffc320104a1f8842e6917c4cef8,
     type: 2}
+  player: {fileID: 0}
 --- !u!212 &212036161165732512
 SpriteRenderer:
   m_ObjectHideFlags: 1

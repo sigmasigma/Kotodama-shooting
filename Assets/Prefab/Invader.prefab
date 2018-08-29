@@ -104,6 +104,7 @@ MonoBehaviour:
   downSpeed: 1
   invaderBullet: {fileID: 1491109863916402, guid: 3d397ffc320104a1f8842e6917c4cef8,
     type: 2}
+  player: {fileID: 0}
 --- !u!212 &212742022192374810
 SpriteRenderer:
   m_ObjectHideFlags: 1
