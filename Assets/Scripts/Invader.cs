@@ -6,8 +6,8 @@ public class Invader : MonoBehaviour {
 
 	int position_x = 0;
 	public int vec_x = 1;
-	public int xSpeed = 2;
-	public float downSpeed = 1;
+	public int xSpeed = 200;
+	public float downSpeed = 100;
 	public GameObject invaderBullet;
 	// Use this for initialization
   IEnumerator Start ()

@@ -8,6 +8,8 @@ public class Player : MonoBehaviour {
 	public GameObject bullet;
   	// 移動スピード
   	public float speed = 5;
+    public GameObject slider;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -23,9 +25,12 @@ public class Player : MonoBehaviour {
     	GetComponent<Rigidbody2D>().velocity = direction * speed;
 
 		if (Input.GetKeyDown(KeyCode.Space)){
-			// スペースで射撃
-			Instantiate (bullet, transform.position, transform.rotation);
-		}
+            // スペースで射撃
+            if (slider.GetComponent<BulletBar>().bulletNumber > 0) {
+                Instantiate(bullet, transform.position, transform.rotation);
+                slider.GetComponent<BulletBar>().UseBullet();
+            }
+        }
 	}
 	void OnTriggerEnter2D (Collider2D c){
 		if(c.gameObject.CompareTag("Invader_bullet") || c.gameObject.CompareTag("Invader")){
