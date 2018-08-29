@@ -5,7 +5,7 @@ using UnityEngine;
 public class TextChangeListener : MonoBehaviour {
     string previousText;
     string currentText;
-
+    ArrayList kanjiList = new ArrayList();
     public GameObject kotodamaBar;
 	// Use this for initialization
 	void Start () {
@@ -14,6 +14,7 @@ public class TextChangeListener : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        
         currentText = gameObject.GetComponent<UnityEngine.UI.Text>().text;
         if (!previousText.Equals(currentText))
         {
@@ -21,8 +22,9 @@ public class TextChangeListener : MonoBehaviour {
             int kotodamaNumber = 0;
             for (int i = 0; i < currentText.Length; i++)
             {
-                if (IsKanji(currentText[i]))
+                if (IsKanji(currentText[i]) && kanjiList.IndexOf(currentText[i]) == -1)
                 {
+                    kanjiList.Add(currentText[i]);
                     kotodamaNumber++;
                 }
             }

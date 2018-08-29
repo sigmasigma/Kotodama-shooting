@@ -6,11 +6,12 @@ public class BulletBar : MonoBehaviour {
 
     public int kotodamaSize = 0;
     public int bulletNumber = 0;
-    public int stringSizeForBullet = 20;
+    public int stringSizeForBullet = 15;
     public GameObject bulletNumberText;
     public GameObject valueText;
     // Use this for initialization
     void Start() {
+        gameObject.GetComponent<UnityEngine.UI.Slider>().maxValue = stringSizeForBullet;
     }
 
     // Update is called once per frame
@@ -25,8 +26,10 @@ public class BulletBar : MonoBehaviour {
         }
 
         gameObject.GetComponent<UnityEngine.UI.Slider>().value = kotodamaSize;
-        valueText.GetComponent<UnityEngine.UI.Text>().text = kotodamaSize.ToString();
+        valueText.GetComponent<UnityEngine.UI.Text>().text = kotodamaSize.ToString() + "/" + stringSizeForBullet.ToString();
+
         bulletNumberText.GetComponent<UnityEngine.UI.Text>().text = bulletNumber.ToString();
+
     }
 
     public void UseBullet()
