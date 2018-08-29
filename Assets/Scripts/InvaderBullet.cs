@@ -11,6 +11,6 @@ public class InvaderBullet : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		GetComponent<Rigidbody2D>().velocity = new Vector2 (0, -7);
+		GetComponent<Rigidbody2D>().velocity = new Vector2 (0, -5);
 	}
 }

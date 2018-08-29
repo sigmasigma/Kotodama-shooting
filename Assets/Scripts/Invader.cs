@@ -4,21 +4,30 @@ using UnityEngine;
 
 public class Invader : MonoBehaviour {
 
+	int position_x = 0;
+	public int vec_x = 1;
+	public int xSpeed = 2;
 	public float downSpeed = 1;
 	public GameObject invaderBullet;
 	// Use this for initialization
   IEnumerator Start ()
   {
     while (true) {
-      GetComponent<Rigidbody2D>().velocity = new Vector2(0,-1) * downSpeed;
+			if((vec_x > 0 && position_x >= 3) || (vec_x < 0 && position_x <= -3)){
+				vec_x *= -1;
+			}
+      GetComponent<Rigidbody2D>().velocity = new Vector2(vec_x * xSpeed, -1 * downSpeed) ;
+			position_x += vec_x;
       // 0.05秒動く
 	  	yield return new WaitForSeconds (0.05f);
 	 		//止まる
 	  	GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
-	  	// 1秒待つ
-      yield return new WaitForSeconds (1f);
-			if (Random.Range(0f,100f) < 99f){
-				Instantiate(invaderBullet,transform.position,transform.rotation);
+	  	// 1秒待つ間に射撃する
+      for (int i = 0; i<5; i++){
+				yield return new WaitForSeconds (0.2f);
+				if (Random.Range(0f,100f) > 92f){
+					Instantiate(invaderBullet,transform.position,transform.rotation);
+				}
 			}
     }
   }
