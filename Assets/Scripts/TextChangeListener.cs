@@ -18,7 +18,23 @@ public class TextChangeListener : MonoBehaviour {
         if (!previousText.Equals(currentText))
         {
             previousText = currentText;
-            kotodamaBar.GetComponent<BulletBar>().kotodamaSize += currentText.Length;
+            int kotodamaNumber = 0;
+            for (int i = 0; i < currentText.Length; i++)
+            {
+                if (IsKanji(currentText[i]))
+                {
+                    kotodamaNumber++;
+                }
+            }
+            kotodamaBar.GetComponent<BulletBar>().kotodamaSize += kotodamaNumber;
         }
+    }
+
+    public static bool IsKanji(char c)
+    {
+        //CJK統合漢字、CJK互換漢字、CJK統合漢字拡張Aの範囲にあるか調べる
+        return ('\u4E00' <= c && c <= '\u9FCF')
+            || ('\uF900' <= c && c <= '\uFAFF')
+            || ('\u3400' <= c && c <= '\u4DBF');
     }
 }

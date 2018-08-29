@@ -11,17 +11,18 @@ public class VoiceRecognition : MonoBehaviour
     void Start()
     {
         dicRecognizer = new DictationRecognizer();
-        dicRecognizer.InitialSilenceTimeoutSeconds = 1;
+        dicRecognizer.InitialSilenceTimeoutSeconds = 1000f;
         // 確定
         dicRecognizer.DictationResult += (text, confidence) =>
         {
-            gameObject.GetComponent<UnityEngine.UI.Text>().text = text;
-            GUIUtility.systemCopyBuffer = text;
+            
             //			System.Diagnostics.Process.Start(path);
         };
         // 推測
         dicRecognizer.DictationHypothesis += (text) => {
             // 推測時にする処理
+            gameObject.GetComponent<UnityEngine.UI.Text>().text = text;
+            GUIUtility.systemCopyBuffer = text;
         };
         // 停止時
         dicRecognizer.DictationComplete += (completeCause) =>
