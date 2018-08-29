@@ -198,7 +198,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 183.38, y: 143.6}
+  m_AnchoredPosition: {x: 0, y: -152.4}
   m_SizeDelta: {x: 366.75, y: 73.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &126853999
@@ -250,13 +250,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: "\n(\u3053\u3053\u306B\u8A00\u8449\u304C\u8868\u793A\u3055\u308C\u307E\u3059)"
 --- !u!222 &126854002
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -971,6 +971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kotodamaSize: 0
   bulletNumber: 0
+  stringSizeForBullet: 15
   bulletNumberText: {fileID: 878064034}
 --- !u!1001 &646089769
 Prefab:

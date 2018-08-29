@@ -6,6 +6,7 @@ public class BulletBar : MonoBehaviour {
 
     public int kotodamaSize = 0;
     public int bulletNumber = 0;
+    public int stringSizeForBullet = 15;
     public GameObject bulletNumberText;
     // Use this for initialization
     void Start() {
@@ -13,12 +14,12 @@ public class BulletBar : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (kotodamaSize > 30)
+        if (kotodamaSize > stringSizeForBullet)
         {
-            while (kotodamaSize > 30)
+            while (kotodamaSize > stringSizeForBullet)
             {
                 bulletNumber++;
-                kotodamaSize -= 30;
+                kotodamaSize -= stringSizeForBullet;
             }
         }
 

@@ -11,7 +11,7 @@ public class VoiceRecognition : MonoBehaviour
     void Start()
     {
         dicRecognizer = new DictationRecognizer();
-        dicRecognizer.InitialSilenceTimeoutSeconds = 10;
+        dicRecognizer.InitialSilenceTimeoutSeconds = 1;
         // 確定
         dicRecognizer.DictationResult += (text, confidence) =>
         {
